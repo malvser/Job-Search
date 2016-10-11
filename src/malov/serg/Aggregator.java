@@ -1,8 +1,6 @@
 package malov.serg;
 
-import malov.serg.model.HHStrategy;
-import malov.serg.model.Model;
-import malov.serg.model.Provider;
+import malov.serg.model.*;
 import malov.serg.view.HtmlView;
 
 /**
@@ -13,7 +11,7 @@ public class Aggregator {
     public static void main(String[] args)
     {
 
-        Provider[] arraysproviders = { new Provider(new HHStrategy())};
+        Provider[] arraysproviders = { new Provider(new HHStrategy()), new Provider(new WorkStrategy()), new Provider(new RabotaStrategy())};
         HtmlView view = new HtmlView();
         view.setController(new Controller(new Model(view, arraysproviders)));
         view.userCitySelectEmulationMethod();
